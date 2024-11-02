@@ -1,0 +1,395 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #F4F2DD;
+    font-family: "Slabo 13px", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* --- header ---*/
+header {
+    margin: 5% 5% 7% 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header img {
+    width: 12vw;
+}
+
+header a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 1vw;
+}
+
+header a:hover {
+    color: #B2AE7F;
+}
+
+header .menu {
+    width: 55%;
+}
+
+header ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+/* --- section 1 --- */
+.section1 {
+    margin-left: 7%;
+    margin-right: 5%;
+    margin-bottom: 10%;
+    display: grid;
+    grid-template-columns: 3fr 1fr 3fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: "title . photo"
+        "p . photo"
+        "btn . photo";
+}
+
+.section1 .title {
+    grid-area: title;
+    margin-top: 0;
+    font-family: "Kodchasan", sans-serif;
+    font-weight: 400;
+    font-size: 3.5vw;
+
+
+}
+
+.section1 .p {
+    grid-area: p;
+    font-size: 1.4vw;
+}
+
+.section1 .btn-wrap {
+    grid-area: btn;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.section1 .btn {
+    width: 45%;
+    height: 30%;
+    font-size: 1.2vw;
+}
+
+.section1 .btn:hover {
+    cursor: pointer;
+    box-shadow: 0 0 10px 4px #B2AE7F;
+}
+
+.section1 .btn1 {
+    background-color: #B2AE7F;
+    border: none;
+}
+
+.section1 .btn2 {
+    background-color: transparent;
+    border: none;
+    margin-right: 5%;
+}
+
+.section1 .photo-wrap {
+    grid-area: photo;
+
+}
+
+.section1 .photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- section 2--- */
+.section2 .top {
+    border-bottom: 1px solid #000000;
+    display: grid;
+    grid-template-columns: 1fr 1fr 0.2fr 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:
+        ". . . photo1 photo1"
+        ". p1 . photo1 photo1"
+        ". . . photo1 photo1";
+}
+
+.section2 .bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr 0.2fr 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:
+        "photo2 photo2 . . . "
+        "photo2 photo2 . p2 . "
+        "photo2 photo2 . . . ";
+}
+
+.p1 {
+    grid-area: p1;
+    font-size: 1.6vw;
+    white-space: pre-line;
+    text-align: right;
+}
+
+.p2 {
+    grid-area: p2;
+    font-size: 1.6vw;
+    white-space: pre-line;
+}
+
+.photo-wrap1 {
+    grid-area: photo1;
+}
+
+.photo-wrap2 {
+    grid-area: photo2;
+}
+
+.photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- section 3 ---*/
+
+.section3 {
+    margin: 5%;
+    border-top: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+}
+
+.section3 .top {
+    text-align: center;
+    padding-top: 4%;
+    padding-bottom: 5%;
+}
+
+.section3 .top h2 {
+    padding-bottom: 2%;
+    font-family: "Kodchasan", sans-serif;
+    font-weight: 400;
+    font-size: 2.1vw;
+}
+
+.section3 .bottom {
+    border-top: 1px solid #000000;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.section3 .card {
+    background-color: #CCC9A3;
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.section3 .card-info {
+    padding: 2%;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas:
+        "title title price"
+        "p p . "
+        ". . ."
+        "btn btn btn"
+    ;
+}
+
+.section3 .title {
+    grid-area: title;
+    font-size: 1.4vw;
+}
+
+.section3 .p {
+    margin-top: 3%;
+    grid-area: p;
+    font-size: 1.2vw;
+}
+
+.section3 .price {
+    grid-area: price;
+    font-size: 0.8vw;
+}
+
+.section3 .btn {
+    font-size: 1.1vw;
+    margin-top: 5%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    grid-area: btn;
+    background-color: #B2AE7F;
+    border: none;
+}
+
+.section3 .btn:hover {
+    cursor: pointer;
+    box-shadow: 0 0 5px 2px #B2AE7F;
+}
+
+/* --- section 4 --- */
+
+.section4 {
+    margin: 5%;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    border-top: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+    display: flex;
+    justify-content: space-between;
+}
+
+.section4 .card {
+    width: 32.5%;
+    position: relative;
+}
+
+.section4 .name {
+    width: 15vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.section4 .name:hover {
+    cursor: pointer;
+    box-shadow: 0 0 5px 2px #B2AE7F;
+}
+
+/* --- section 5 --- */
+
+.section5 {
+    margin: 3% 5%;
+    display: flex;
+    flex-direction: column;
+}
+
+.section5 h2 {
+    font-family: "Kodchasan", sans-serif;
+    font-weight: 400;
+    font-size: 2.1vw;
+    padding: 5%;
+    text-align: center;
+}
+
+.section5 .article {
+    padding: 3%;
+    border: 1px solid #000000;
+    display: grid;
+    grid-template-columns: 25vw 0.1fr auto 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+        "photo . title . ."
+        "photo . btn . .";
+}
+
+.section5 .article2 {
+    margin-top: 2%;
+}
+
+.section5 .article .title {
+    white-space: pre-line;
+    font-size: 1.7vw;
+    grid-area: title;
+}
+
+.section5 .photo {
+    grid-area: photo;
+}
+
+.section5 .btn {
+    height: 70%;
+    font-size: 1.4vw;
+    width: 15vw;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    grid-area: btn;
+    align-self: flex-end;
+    background-color: #B2AE7F;
+    border: none;
+}
+
+.section5 .btn:hover {
+    cursor: pointer;
+    box-shadow: 0 0 5px 2px #B2AE7F;
+}
+
+/* --- footer --- */
+
+footer {
+    font-size: 1.2vw;
+    background-color: #B2AE7F;
+    padding: 7% 10% 10% 10%;
+    display: grid;
+    grid-template-columns: 2fr 2fr repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr 2fr 2fr 1fr 1fr;
+    grid-template-areas: "logo . . title ."
+        ". . . . ."
+        "about . nav1 . nav2"
+        ". . nav1 . nav2"
+        ". . . . ."
+        "des . . . .";
+}
+
+footer a {
+    text-decoration: none;
+    color: #000000;
+}
+
+footer a:hover {
+    color: #CCC9A3;
+}
+
+footer .list {
+    height: 100%;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+footer .logo {
+    width: 10vw;
+    grid-area: logo;
+}
+
+footer .about {
+    grid-area: about;
+    white-space: pre-line;
+}
+
+footer .designed {
+    grid-area: des;
+}
+
+footer .title {
+    font-family: "Kodchasan", sans-serif;
+    font-weight: 400;
+    font-size: 1.8vw;
+    grid-area: title;
+}
+
+footer .nav1 {
+    grid-area: nav1;
+}
+
+footer .nav2 {
+    grid-area: nav2;
+}
