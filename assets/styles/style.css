@@ -33,7 +33,7 @@ header a:hover {
     color: #B2AE7F;
 }
 
-.nav {
+header .nav {
     width: 55%;
 }
 
@@ -122,6 +122,7 @@ header ul {
 }
 
 .section1 .p {
+    white-space: pre-line;
     grid-area: p;
     font-size: 1.4vw;
 }
@@ -135,7 +136,7 @@ header ul {
 
 .section1 .btn {
     width: 45%;
-    height: 30%;
+    padding: 1.5vw;
     font-size: 1.2vw;
 }
 
@@ -240,8 +241,10 @@ header ul {
     border-top: 1px solid #000000;
     padding-top: 1%;
     padding-bottom: 1%;
-    display: flex;
+    display: grid;
     justify-content: space-between;
+    grid-template-areas:
+        "card1 card2 card3 card4";
 }
 
 .section3 .card {
@@ -264,6 +267,22 @@ header ul {
         ". . ."
         "btn btn btn"
     ;
+}
+
+.card1 {
+    grid-area: card1;
+}
+
+.card2 {
+    grid-area: card2;
+}
+
+.card3 {
+    grid-area: card3;
+}
+
+.card4 {
+    grid-area: card4;
 }
 
 .section3 .title {
@@ -372,8 +391,7 @@ header ul {
     height: 70%;
     font-size: 1.4vw;
     width: 15vw;
-    padding-top: 3%;
-    padding-bottom: 3%;
+    padding: 3%;
     grid-area: btn;
     align-self: flex-end;
     background-color: #B2AE7F;
@@ -392,14 +410,14 @@ footer {
     background-color: #B2AE7F;
     padding: 7% 10% 10% 10%;
     display: grid;
-    grid-template-columns: 2fr 2fr repeat(3, 1fr);
-    grid-template-rows: 1fr 1fr 2fr 2fr 1fr 1fr;
-    grid-template-areas: "logo . . title ."
-        ". . . . ."
-        "about . nav1 . nav2"
-        ". . nav1 . nav2"
-        ". . . . ."
-        "des . . . .";
+    grid-template-columns: 1.2fr 1.8fr 1fr 1fr;
+    grid-template-rows: auto 2vw auto auto 2vw auto;
+    grid-template-areas: "logo . title ."
+        ". . . ."
+        "about . nav1 nav2"
+        ". . nav1 nav2"
+        ". . . ."
+        "des . . .";
 }
 
 footer a {
@@ -439,9 +457,12 @@ footer .title {
     font-weight: 400;
     font-size: 1.8vw;
     grid-area: title;
+    text-align: end;
+    padding-right: 2vw;
 }
 
 footer .nav1 {
+    height: 15vw;
     grid-area: nav1;
 }
 
@@ -450,6 +471,13 @@ footer .nav2 {
 }
 
 @media (max-width:768px) {
+
+    /* header */
+
+    header img {
+        width: 15vw;
+    }
+
     .burger {
         display: flex;
     }
@@ -477,11 +505,248 @@ footer .nav2 {
     }
 
     header a {
-        font-size: 2vw;
+        font-size: 3vw;
     }
 
     header a:hover {
         color: #F4F2DD;
+    }
+
+    /* sec1 */
+
+    .section1 {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, auto);
+        grid-template-areas: "title"
+            "p"
+            "photo"
+            "btn";
+    }
+
+    .section1 .title {
+        font-size: 4.5vw;
+    }
+
+    .section1 .p {
+        margin-bottom: 5%;
+        font-size: 3vw;
+    }
+
+    .section1 .btn-wrap {
+        padding-top: 3%;
+    }
+
+    .section1 .btn {
+        padding: 2vw;
+        font-size: 2.5vw;
+    }
+
+    .section1 .btn2 {
+        margin-right: 0;
+    }
+
+    /* sec2 */
+
+    .section2 .top {
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(2, auto);
+        grid-template-areas:
+            "photo1"
+            "p1";
+    }
+
+    .section2 .bottom {
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(2, auto);
+        grid-template-areas:
+            "photo2"
+            "p2";
+    }
+
+    .p1 {
+        padding: 10%;
+        font-size: 3vw;
+        text-align: center;
+    }
+
+    .p2 {
+        padding: 10%;
+        font-size: 3vw;
+        text-align: center;
+    }
+
+    /* sec3 */
+
+    .section3 .bottom {
+        justify-content: space-between;
+        grid-template-areas:
+            "card1 card2"
+            "card3 card4";
+    }
+
+    .section3 .top h2 {
+        font-size: 2.8vw;
+    }
+
+    .section3 .top>p {
+        font-size: 3vw;
+    }
+
+    .section3 .card {
+        width: 40vw;
+        margin-top: 2%;
+        margin-bottom: 2%;
+
+    }
+
+    .section3 .title {
+        font-size: 2vw;
+    }
+
+    .section3 .p {
+        font-size: 1.8vw;
+    }
+
+    .section3 .price {
+        font-size: 1.5vw;
+    }
+
+    .section3 .btn {
+        font-size: 1.5vw;
+    }
+
+    /* sec5 */
+
+
+    .section5 h2 {
+        font-size: 2.8vw;
+    }
+
+    .section5 .article {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+            "photo title"
+            "photo btn ";
+    }
+
+    .section5 .article .title {
+        align-self: center;
+        white-space: normal;
+        font-size: 2.3vw;
+    }
+
+    .section5 .photo {
+        width: 40vw;
+    }
+
+    .section5 .btn {
+        margin-bottom: 3%;
+        height: 70%;
+        font-size: 2vw;
+        width: 25vw;
+        padding: 1%;
+    }
+
+    /* foot */
+
+    footer {
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: auto 5vw auto;
+        grid-template-areas: "logo ."
+            ". ."
+            "nav1 nav2";
+    }
+
+    footer a {
+        font-size: 1.7vw;
+    }
+
+    footer .nav1 {
+        height: 20vw;
+    }
+
+    footer .logo {
+        width: 15vw;
+        grid-area: logo;
+    }
+
+    footer .about {
+        display: none;
+    }
+
+    footer .designed {
+        display: none;
+    }
+
+    footer .title {
+        display: none;
+    }
+
+}
+
+@media (max-width:425px) and (min-width:300px) {
+
+    /* sec3 */
+
+    .section3 .bottom {
+        justify-content: center;
+        grid-template-areas:
+            "card1"
+            "card2"
+            "card3"
+            "card4";
+    }
+
+    .section3 .card {
+        width: 70vw;
+    }
+
+    /* sec4 */
+    .section4 {
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .section4 .card {
+        width: 70vw;
+    }
+
+    .section4 .name {
+        width: 40vw;
+    }
+
+    /* sec5 */
+
+
+    .section5 h2 {
+        font-size: 2.8vw;
+    }
+
+    .section5 .article {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+            "photo"
+            "title"
+            "btn ";
+    }
+
+    .section5 .article .title {
+        font-size: 3vw;
+        padding-top: 3vw;
+    }
+
+    .section5 .photo {
+        width: 100%;
+    }
+
+    .section5 .btn {
+        margin: 0;
+        font-size: 3vw;
+        width: 40vw;
+        padding-top: 2vw;
+        padding-bottom: 5vw;
     }
 
 }
